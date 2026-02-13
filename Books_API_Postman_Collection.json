@@ -1,0 +1,144 @@
+{
+  "info": {
+    "name": "Books CRUD API",
+    "description": "Complete CRUD API for Books Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://169.239.251.102:280/~your_username/books-api/actions",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Read All Books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/read_all.php",
+          "host": ["{{base_url}}"],
+          "path": ["read_all.php"]
+        },
+        "description": "Retrieve all books from the database with their IDs"
+      },
+      "response": []
+    },
+    {
+      "name": "Read One Book",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/read_one.php?id=1",
+          "host": ["{{base_url}}"],
+          "path": ["read_one.php"],
+          "query": [
+            {
+              "key": "id",
+              "value": "1",
+              "description": "Book ID to retrieve"
+            }
+          ]
+        },
+        "description": "Retrieve a single book by its ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "New Book Title",
+              "type": "text",
+              "description": "Book name"
+            },
+            {
+              "key": "phone",
+              "value": "0240555555",
+              "type": "text",
+              "description": "Phone number"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/create.php",
+          "host": ["{{base_url}}"],
+          "path": ["create.php"]
+        },
+        "description": "Create a new book record in the database"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "1",
+              "type": "text",
+              "description": "Book ID to update"
+            },
+            {
+              "key": "name",
+              "value": "Updated Book Title",
+              "type": "text",
+              "description": "New book name"
+            },
+            {
+              "key": "phone",
+              "value": "0240999999",
+              "type": "text",
+              "description": "New phone number"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/update.php",
+          "host": ["{{base_url}}"],
+          "path": ["update.php"]
+        },
+        "description": "Update an existing book's information"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "1",
+              "type": "text",
+              "description": "Book ID to delete"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/delete.php",
+          "host": ["{{base_url}}"],
+          "path": ["delete.php"]
+        },
+        "description": "Delete a book from the database"
+      },
+      "response": []
+    }
+  ]
+}
